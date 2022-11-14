@@ -1,0 +1,51 @@
+#include <iostream>
+#include <sstream>
+
+int main(int argc, char **argv){
+
+  if(argc < 2)
+    exit(1);
+  
+  //exercise 2.1
+ 
+  size_t a;
+  std::istringstream(argv[1]) >> a;
+
+  /*
+  int b;
+  std::istringstream(argv[1]) >> b;
+
+  double c;
+  std::istringstream(argv[1]) >> c;
+*/
+  int out = (a >> 1) << 1;
+
+  if( out == a )
+    std::cout << a << " is even" << std::endl;
+
+  else
+    std::cout << a << " is odd" << std::endl;
+
+  //exercise 2.2
+
+  int z = 0;
+  int x = a;
+
+  while(x > 1){
+    x = x >> 1;
+    z += 1;
+  }
+
+  std::cout << "z is: " << z << std::endl;
+
+  //exercise 2.3
+
+  double em = 0.7;
+  double y = std::numeric_limits<double>::epsilon();
+  while( 1+em != 1 ){
+    em = em/2;
+}
+  std::cout <<"machine epsilon is: " << em << std::endl;
+  std::cout << y  << std::endl;
+
+}
